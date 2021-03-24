@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 /**
  * @author hudaysha
@@ -22,6 +23,23 @@ public class Product {
 	private String name;
 	private String description;
 	private BigDecimal price;
+	
+	@Transient
+	private String couponCode; 
+
+	/**
+	 * @return the couponCode
+	 */
+	public String getCouponCode() {
+		return couponCode;
+	}
+
+	/**
+	 * @param couponCode the couponCode to set
+	 */
+	public void setCouponCode(String couponCode) {
+		this.couponCode = couponCode;
+	}
 
 	/**
 	 * @return the id
